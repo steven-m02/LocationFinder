@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
     LocationFinderDatabase locationDB;
     EditText editAddress, editLatitude, editLongitude, editTextId;
-    Button btnAddData, btnviewUpdate, btnDelete;
+    Button ButtonAddData, ButtonviewUpdate, ButtonDelete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,18 +25,18 @@ public class MainActivity extends AppCompatActivity {
         editLongitude = findViewById(R.id.editText_longitude);
         editTextId = findViewById(R.id.editText_id);
 
-        btnAddData = findViewById(R.id.button_add);
-        btnviewUpdate = findViewById(R.id.button_update);
-        btnDelete = findViewById(R.id.button_delete);
+        ButtonAddData = findViewById(R.id.button_add);
+        ButtonviewUpdate = findViewById(R.id.button_update);
+        ButtonDelete = findViewById(R.id.button_delete);
 
         AddData();
         UpdateData();
         DeleteData();
     }
 
-    // Add data
+    // Add data 
     public void AddData() {
-        btnAddData.setOnClickListener(
+        ButtonAddData.setOnClickListener(
                 v -> {
                     String address = editAddress.getText().toString();
                     String latitude = editLatitude.getText().toString();
@@ -63,9 +63,9 @@ public class MainActivity extends AppCompatActivity {
         );
     }
 
-    // Update data
+    // Update data 
     public void UpdateData() {
-        btnviewUpdate.setOnClickListener(
+        ButtonviewUpdate.setOnClickListener(
                 v -> {
                     String id = editTextId.getText().toString();
                     String address = editAddress.getText().toString();
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Delete data
     public void DeleteData() {
-        btnDelete.setOnClickListener(
+        ButtonDelete.setOnClickListener(
                 v -> {
                     String id = editTextId.getText().toString();
                     if (id.isEmpty()) {
@@ -113,5 +113,5 @@ public class MainActivity extends AppCompatActivity {
         );
     }
 
-
+   
 }
